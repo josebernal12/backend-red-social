@@ -6,11 +6,18 @@ export interface IUser {
   password?: string
   token?: string
 }
+export interface IPost {
+  description?: string,
+  date: Date
+  image?: string
+}
 
 export default interface IResponse {
   error: boolean;
   message: string;
   user?: IUser;
+  post?: IPost
+  posts?: IPost[]
   token?: string
   status: number;
 }

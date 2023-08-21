@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt'
   this.password = await bcrypt.hash(this.password, 10)
 })
 
-class User {
+export class User {
   @prop()
   name: string;
 

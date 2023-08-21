@@ -14,6 +14,10 @@ router.post('/register', [
   validateField,
 ], AuthController.register)
 
-router.post('/login', AuthController.login)
+router.post('/login', [
+  check('email', 'email is required').not().isEmpty().isEmail(),
+  check('password', 'password is required').not().isEmpty(),
+  validateField
+], AuthController.login)
 
 export default router
