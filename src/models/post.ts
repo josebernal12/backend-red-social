@@ -4,15 +4,15 @@ import { Comments } from './comments';
 
 export class Post {
   @prop()
-  description: string;
+  message: string;
   @prop({ default: Date.now() })
   date: Date;
   @prop()
   image: string;
-  @prop({ ref: () => Comments })
-  comments: Ref<Comments[]>
-  @prop({ ref: () => Likes })
-  likes: Ref<Likes>
+  // @prop({ ref: () => Comments })
+  // comments: Ref<Comments[]>
+  // @prop({ ref: () => Likes })
+  // likes: Ref<Likes>
 
 
 }

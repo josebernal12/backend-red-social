@@ -20,4 +20,5 @@ router.post('/login', [
   validateField
 ], AuthController.login)
 
+router.get('/profile', checkAuth, AuthController.profile)
 export default router

@@ -14,7 +14,6 @@ const checkAuth = async (req: RequestExt, res: Response, next: NextFunction) => 
       token = req.headers.authorization.split(' ')[1];
 
       const decoded = jwt.verify(token, process.env.KEYSECRET || 'defaultSecret') as MyJwtInterfaces
-      console.log(decoded)
       const user = await userModel.findById(decoded.id)
       if (user) {
         req.user = user

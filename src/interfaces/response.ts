@@ -7,7 +7,7 @@ export interface IUser {
   token?: string
 }
 export interface IPost {
-  description?: string,
+  message?: string,
   date: Date
   image?: string
 }

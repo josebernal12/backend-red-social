@@ -1,5 +1,8 @@
 import { Request, Response } from 'express'
-
+import { JwtPayload } from 'jsonwebtoken'
+interface RequestExt extends Request {
+  user?: string | JwtPayload
+}
 import UserServices from '../services/userServices'
 class AuthController {
 
@@ -22,6 +25,15 @@ class AuthController {
       user: user.user,
       token: user.token,
       status: user.status
+    })
+  }
+  static profile(req: RequestExt, res: Response) {
+    const user = req.user
+    res.json({
+      error: false,
+      message: 'user obtained',
+      user,
+      status: 200
     })
   }
 
